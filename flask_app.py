@@ -98,8 +98,8 @@ def main_route():
 
         resp += str.format("<tr><td><h4>{0}</h4></td><td><img src='{1}'/></td><td><h5><a href='http://twitter.com/{3}'>{2}</a></h5></td></tr></a>", 
                            user[1], 
-                           shlv[user_id]['profile_url'], 
-                           shlv[user_id]['user_name'].decode('utf8'), 
+                           shlv[user_id]['profile_url'],
+                           unicode(shlv[user_id]['user_name']),
                            shlv[user_id]['user'] )
   
     
