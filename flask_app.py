@@ -76,25 +76,45 @@ new_hdr = '''
     <script src="https://platform.twitter.com/widgets.js" type="text/javascript"></script>
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
   </head>
-  <body>
+  <body style="background: rgb(156, 211, 57); background-image: url(static/img/bg.png); background-repeat: repeat-x;">
     <div class="container">
-
-      <div class="masthead" >
+    <div class="masthead" >
         <img src="static/img/header.png">
-      <div class="jumbotron" style="background: rgb(156, 211, 57);">
-        <p class="lead">1. Take the challenge...</p>
-        <p class="lead">2. Cut your bills...</p>
-        <p class="lead">3. Save the planet!</p>
-        <br>
-        <p>Be the first to be briefed</p>
-        <!-- Begin MailChimp Signup Form -->
-          <form action="http://twitter.us6.list-manage.com/subscribe/post?u=c02b248faab3da7a19119c7bd&amp;id=28f614ae67" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-            <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-            </form>
+      <div class="row-fluid" style="background: rgb(156, 211, 57); padding-top:50px;">
+
+        <div class="span6" style="padding-left:20px;">
+            <h2 style="color:white;">1. Take the challenge... <br> 2. Cut your bills... <br>3. Save the planet!</h2>
+        </div>
+        <div class="span6" style="padding-top:15px;">
+            <em style="color:white; font-size:18px;">Play GreenGame, get challenged to change your behavior concerning energy usage. <br><br>Start competing right now on Twitter in a quest to share about your sustainable actions!</em>
+
+        </div>
+
+
+    </div>
     
-        <!--End mc_embed_signup-->
-      </div>
+    <div class="row">
+
+        <div class="span12" style="padding-left:20px;">
+            <br>
+            
+            <!-- Begin MailChimp Signup Form -->
+<link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+     clear:left; font:14px Helvetica,Arial,sans-serif; }
+    /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+       We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="http://twitter.us6.list-manage.com/subscribe/post?u=c02b248faab3da7a19119c7bd&amp;id=28f614ae67" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <label for="mce-EMAIL">Subscribe to our mailing list</label>
+    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+        </div>
         
 
     <div class="row-fluid marketing" style="background: rgb(156, 211, 57);">
