@@ -49,7 +49,7 @@ main_hdr = '''
         </div>
         <div class="row-fluid">
             <div class="span4">
-                <h4>Top contibutors</h4></br>'''
+                <h4>Top contributors</h4></br>'''
                 
 main_foot = '''
             </div>
@@ -63,6 +63,7 @@ main_foot = '''
     </html>
 '''
 
+skip_those = ['GreenGameSW']
 
 @app.route('/')
 def main_route():
@@ -78,8 +79,9 @@ def main_route():
     for x in res['results']:
         
         user_id = x['from_user_id_str'].__str__()
-        #print(user_id)
-        print(x)
+        if x['from_user'] in skip_those:
+            continue
+        
         if user_id in shlv.keys():
             shlv[user_id]['count'] += 1
         else:
