@@ -27,7 +27,7 @@ main_hdr = '''
     <div class="container-fluid">
         <div class="row-fluid">
             <div class="span12">
-                Main
+                <h2>Main</h2>
             </div>
         </div>
         <div class="row-fluid">
@@ -56,20 +56,20 @@ def main_route():
     shlv = dict()
     cnt = collections.Counter()
     
-    resp += '<table class="table"><tbody>'
+    resp += '<table class="table table-hover table-condensed"><tbody>'
     print(len(res))
     for x in res['results']:
         
         user_id = x['from_user_id_str'].__str__()
         #print(user_id)
-        
+        print(x)
         if user_id in shlv.keys():
             shlv[user_id]['count'] += 1
         else:
             shlv[user_id] = dict()
             shlv[user_id]['count'] = 1
             shlv[user_id]['user_name'] = x['from_user']
-            shlv[user_id]['profile_url'] = x['profile_image_url_https']
+            shlv[user_id]['profile_url'] = x['profile_image_url']
     
         cnt[user_id] = shlv[user_id]['count']
         shlv[user_id]['count'] = 0
@@ -77,8 +77,8 @@ def main_route():
 
     for user in cnt.most_common(10):
         user_id = str.format("{0}",user[0])
-        print(user_id)
-        resp += str.format("<tr><td valign='base' class='badge badge-success'>{0}</td><td><img src='{1}' size='80%'/></td><td><h5>{2}</h5></td></tr>", 
+
+        resp += str.format("<tr><td><h4>{0}</h4></td><td><img src='{1}' size='80%'/></td><td><h5>{2}</h5></td></tr>", 
                            user[1], shlv[user_id]['profile_url'], shlv[user_id]['user_name'])
   
     
