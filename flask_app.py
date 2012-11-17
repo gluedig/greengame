@@ -70,30 +70,25 @@ def main_route():
     twitter_search = twitter.Twitter(domain="search.twitter.com")
     res=twitter_search.search(q="#greengame")
     resp = main_hdr
-    #shlv = shelve.open('greengame.shelve', writeback = True)
     shlv = dict()
     cnt = collections.Counter()
     
     resp += '<table class="table table-hover table-condensed"><tbody>'
-    print(len(res))
+
     for x in res['results']:
-        
         user_id = x['from_user_id_str'].__str__()
         if x['from_user'] in skip_those:
             continue
         
-        if user_id in shlv.keys():
-            shlv[user_id]['count'] += 1
-        else:
+        if not user_id in shlv.keys():
             shlv[user_id] = dict()
-            shlv[user_id]['count'] = 1
             shlv[user_id]['user_name'] = x['from_user_name']
             shlv[user_id]['profile_url'] = x['profile_image_url']
             shlv[user_id]['user'] = x['from_user']
     
-        cnt[user_id] = shlv[user_id]['count']
+        cnt[user_id] += 1
         shlv[user_id]['count'] = 0
-    
+
 
     for user in cnt.most_common(10):
         user_id = str.format("{0}",user[0])
