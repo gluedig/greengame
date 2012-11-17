@@ -12,55 +12,108 @@ import collections
 
 app = Flask(__name__)
 
-main_hdr = '''
-    <!DOCTYPE html>
-    <html>
-    <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link rel="stylesheet" type="text/css" href="static/mystyle.css">
+new_hdr = '''
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
     <title>Green Game</title>
-    </head>
-    <body>
-    <script src="https://platform.twitter.com/widgets.js" type="text/javascript"></script>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!-- Le styles -->
+    <link href="static/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        
+        padding-bottom: 40px;
+        
+      }
 
-    <div class="container-fluid">
-        <div class="row-fluid">
-            <div class="span12">
-                <h2>Green Game</h2>
-<!-- Begin MailChimp Signup Form -->
-<link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
-<style type="text/css">
-    #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+      /* Custom container */
+      .container-narrow {
+        margin: 0 auto;
+        max-width: 700px;
+      }
+      .container-narrow > hr {
+        margin: 30px 0;
+      }
+
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        padding: 60px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 72px;
+        line-height: 1;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+
+      /* Supporting marketing content */
+      .marketing {
+        margin: 0px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }
+    </style>
+    <link href="static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+    #mc_embed_signup{background:rgb(156, 211, 57); clear:left; font:14px Helvetica,Arial,sans-serif; }
     /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
        We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-</style>
-<div id="mc_embed_signup">        
-<form action="http://twitter.us6.list-manage.com/subscribe/post?u=c02b248faab3da7a19119c7bd&amp;id=28f614ae67" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-    <label for="mce-EMAIL">Subscribe to our mailing list</label>
-    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-</form>
-</div>
+    </style>
+    <script src="https://platform.twitter.com/widgets.js" type="text/javascript"></script>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </head>
+  <body>
+    <div class="container">
 
-<!--End mc_embed_signup-->
+      <div class="masthead" >
+        <img src="static/img/header.png">
+      <div class="jumbotron" style="background: rgb(156, 211, 57);">
+        <p class="lead">1. Take the challenge...</p>
+        <p class="lead">2. Cut your bills...</p>
+        <p class="lead">3. Save the planet!</p>
+        <br>
+        <p>Be the first to be briefed</p>
+        <!-- Begin MailChimp Signup Form -->
+          <form action="http://twitter.us6.list-manage.com/subscribe/post?u=c02b248faab3da7a19119c7bd&amp;id=28f614ae67" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+            <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+            </form>
+    
+        <!--End mc_embed_signup-->
+      </div>
+        
+
+    <div class="row-fluid marketing" style="background: rgb(156, 211, 57);">
+            <div class="span1"></div>
+            <div class="span4" >
+                <h4>Top contributors</h4></br>
+'''
+
+new_foot = '''
             </div>
-        </div>
-        <div class="row-fluid">
-            <div class="span4">
-                <h4>Top contributors</h4></br>'''
-                
-main_foot = '''
-            </div>
+            <div class="span2"></div>
             <div class="span4">
                 <h4>Recent tweets<h4></br>
                 <a class="twitter-timeline" href="https://twitter.com/search?q=%23greengame" data-widget-id="269808655258492930">Tweets about "#greengame"</a>
             </div>
-        </div>
     </div>
-    </body>
-    </html>
+    </div>
+  </body>
+</html>
 '''
 
 skip_those = ['GreenGameSW']
@@ -69,11 +122,11 @@ skip_those = ['GreenGameSW']
 def main_route():
     twitter_search = twitter.Twitter(domain="search.twitter.com")
     res=twitter_search.search(q="#greengame")
-    resp = main_hdr
+    resp = new_hdr
     shlv = dict()
     cnt = collections.Counter()
     
-    resp += '<table class="table table-hover table-condensed"><tbody>'
+    resp += '<table class="table table-hover table-condensed table-bordered" style="background: white;"><tbody>'
 
     for x in res['results']:
         user_id = x['from_user_id_str'].__str__()
@@ -101,9 +154,7 @@ def main_route():
   
     
     
-    return resp+'</tbody></table>'+main_foot
-
-
+    return resp+'</tbody></table>'+new_foot
 
 
 if __name__ == '__main__':
