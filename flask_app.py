@@ -36,7 +36,7 @@ main_hdr = '''
     /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
        We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
 </style>
-<div id="mc_embed_signup">
+<div id="mc_embed_signup">        
 <form action="http://twitter.us6.list-manage.com/subscribe/post?u=c02b248faab3da7a19119c7bd&amp;id=28f614ae67" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
     <label for="mce-EMAIL">Subscribe to our mailing list</label>
     <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
@@ -97,7 +97,10 @@ def main_route():
         user_id = str.format("{0}",user[0])
 
         resp += str.format("<tr><td><h4>{0}</h4></td><td><img src='{1}'/></td><td><h5><a href='http://twitter.com/{3}'>{2}</a></h5></td></tr></a>", 
-                           user[1], shlv[user_id]['profile_url'], shlv[user_id]['user_name'], shlv[user_id]['user'] )
+                           user[1], 
+                           shlv[user_id]['profile_url'], 
+                           str(shlv[user_id]['user_name']).encode('utf8'), 
+                           shlv[user_id]['user'] )
   
     
     
