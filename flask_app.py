@@ -8,7 +8,6 @@ Created on Nov 17, 2012
 
 from flask import Flask
 import twitter
-import shelve
 import collections
 
 app = Flask(__name__)
@@ -19,7 +18,7 @@ main_hdr = '''
     <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <title>Bootstrap 101 Template</title>
+    <title>Green Game</title>
     </head>
     <body>
     <script src="https://platform.twitter.com/widgets.js" type="text/javascript"></script>
@@ -27,58 +26,42 @@ main_hdr = '''
 
     <div class="container-fluid">
         <div class="row-fluid">
-        Main
+            <div class="span12">
+                Main
+            </div>
         </div>
         <div class="row-fluid">
-            <div class="span2">
-
+            <div class="span4">
+                <h4>Top contibutors</h4></br>'''
+                
+main_foot = '''
             </div>
-            <div class="span10">
+            <div class="span4">
+                <h4>Recent tweets<h4></br>
                 <a class="twitter-timeline" href="https://twitter.com/search?q=%23greengame" data-widget-id="269808655258492930">Tweets about "#greengame"</a>
             </div>
         </div>
     </div>
-
     </body>
     </html>
 '''
 
-battle_hdr = '''
-<!DOCTYPE html>
-    <html>
-    <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
-    <title>Bootstrap 101 Template</title>
-    </head>
-    <body>
-    <ul class="nav nav-pills nav-stacked">
-    ...
-    </ul>
-    
-    </body>
-    </html>
-'''
 
 @app.route('/')
 def main_route():
-    return main_hdr
-
-
-@app.route('/battle')
-def battle_route():
     twitter_search = twitter.Twitter(domain="search.twitter.com")
     res=twitter_search.search(q="#greengame")
-    resp = ''
-    
-    shlv = shelve.open('greengame.shelve', writeback = True)
+    resp = main_hdr
+    #shlv = shelve.open('greengame.shelve', writeback = True)
+    shlv = dict()
     cnt = collections.Counter()
     
+    resp += '<table class="table"><tbody>'
     print(len(res))
     for x in res['results']:
         
         user_id = x['from_user_id_str'].__str__()
-        print(user_id)
+        #print(user_id)
         
         if user_id in shlv.keys():
             shlv[user_id]['count'] += 1
@@ -92,14 +75,15 @@ def battle_route():
         shlv[user_id]['count'] = 0
     
 
-    for user in cnt.most_common():
-        resp += str.format("{0} {1} </br>", user[0], user[1])
+    for user in cnt.most_common(10):
+        user_id = str.format("{0}",user[0])
+        print(user_id)
+        resp += str.format("<tr><td valign='base' class='badge badge-success'>{0}</td><td><img src='{1}' size='80%'/></td><td><h5>{2}</h5></td></tr>", 
+                           user[1], shlv[user_id]['profile_url'], shlv[user_id]['user_name'])
+  
     
-    shlv.close()
     
-    
-    
-    return resp
+    return resp+'</tbody></table>'+main_foot
 
 
 
