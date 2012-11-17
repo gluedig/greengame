@@ -81,23 +81,21 @@ new_hdr = '''
     <div class="masthead" >
         <img src="static/img/header.png">
       <div class="row-fluid" style="background: rgb(156, 211, 57); padding-top:50px;">
-
         <div class="span6" style="padding-left:20px;">
             <h2 style="color:white;">1. Take the challenge... <br> 2. Cut your bills... <br>3. Save the planet!</h2>
         </div>
         <div class="span6" style="padding-top:15px;">
             <em style="color:white; font-size:18px;">Play GreenGame, get challenged to change your behavior concerning energy usage. <br><br>Start competing right now on Twitter in a quest to share about your sustainable actions!</em>
-
         </div>
-
-
     </div>
     
-    <div class="row">
-
-        <div class="span12" style="padding-left:20px;">
+    <div class="row-fluid">
+    
+    <div class="span8" style="padding-left:20px;">
+    </div>
+        <div class="span4" style="padding-left:20px;">
             <br>
-            
+           
             <!-- Begin MailChimp Signup Form -->
 <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
 <style type="text/css">
