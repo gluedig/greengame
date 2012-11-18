@@ -158,7 +158,7 @@ new_hdr = '''
         </div>
         
         <div class="span6" style="padding-left: 20px;">
-            <a href="static/img/Greengame_Mockup1.jpg" rel="lightbox" title="Green Game"><img src="static/img/Greengame_Mockup1.jpg" width="100%" height="100%"></a>
+            <a href="static/img/Greengame_Mockup2.jpg" rel="lightbox" title="Green Game"><img src="static/img/Greengame_Mockup2.jpg" width="100%" height="100%"></a>
         </div>
         
     </div>
@@ -215,7 +215,7 @@ def main_route():
     for user in cnt.most_common(10):
         user_id = str.format("{0}",user[0])
 
-        resp += u"<tr><td><h4>{0}</h4></td><td style='align: right;'><img src='{1}'/></td><td><h5><a href='http://twitter.com/{3}'>{2}</a></h5></td></tr></a>".format( 
+        resp += u"<tr><!--<td><h4>{0}</h4></td>--><td style='align: right;'><img src='{1}'/></td><td><h5><a href='http://twitter.com/{3}'>{2}</a></h5></td></tr></a>".format( 
                            unicode(user[1]), 
                            unicode(shlv[user_id]['profile_url']),
                            unicode(shlv[user_id]['user_name']),
