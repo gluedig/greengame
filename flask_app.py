@@ -85,7 +85,7 @@ new_hdr = '''
         }(document, 'script', 'facebook-jssdk'));</script>
     <div class="container">
     <div class="masthead" >
-        <img src="static/img/header.png">
+    <img src="static/img/header.png">
       <div class="row-fluid" style="background: rgb(156, 211, 57); padding-top:50px;">
         <div class="span6" style="padding-left:20px;">
             <h2 style="color:white;">1. Take the challenge... <br> 2. Cut your bills... <br>3. Save the planet!</h2>
@@ -113,7 +113,7 @@ new_hdr = '''
         </div>
         <div class="span3" style="padding-top:20px;"></div>
         <div class="span1" style="padding-top:20px;"></div>
-        <div class="span4">
+        <div class="span4" style="padding-left:20px;">
             <!-- Begin MailChimp Signup Form -->
             <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
             <style type="text/css">
@@ -123,7 +123,7 @@ new_hdr = '''
             <form action="http://twitter.us6.list-manage.com/subscribe/post?u=c02b248faab3da7a19119c7bd&amp;id=28f614ae67" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
                 <label for="mce-EMAIL" style="color:white; font-size:18px;">Subscribe to our mailing list</label>
                 <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-                <div class="clear" ><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" style="color:white; font-size:18px;"></div>
+                <div class="clear" ><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" style="background: rgb(135, 60, 144); color: white; font-size:18px;"></div>
             </form>
             </div>
             <!--End mc_embed_signup-->
@@ -131,14 +131,14 @@ new_hdr = '''
     </div>
     <div class="row-fluid marketing" style="background: rgb(156, 211, 57); padding-left:20px; padding-top:20px;"">
             <div class="span4" >
-                <em style="color:white; font-size:22px;">Top contributors</em></br>
+                <em style="color:white; font-size:22px;">Top contributors</em></br></br>
 '''
 
 new_foot = '''
             </div>
-            <div class="span1"></div>
+            <div class="span2"></div>
             <div class="span4">
-                <em style="color:white; font-size:22px;">Recent tweets</em></br>
+                <em style="color:white; font-size:22px;">Recent tweets</em></br></br>
                 <a class="twitter-timeline" href="https://twitter.com/search?q=%23greengame" data-widget-id="269808655258492930">Tweets about "#greengame"</a>
             </div>
     </div>
