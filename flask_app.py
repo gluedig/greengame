@@ -179,13 +179,14 @@ skip_those = ['GreenGameSW']
 @app.route('/')
 def main_route():
     twitter_search = twitter.Twitter(domain="search.twitter.com")
-    res=twitter_search.search(q="#greengame")
+    res=twitter_search.search(q="#greengame", rpp=100)
     resp = new_hdr
     shlv = dict()
     cnt = collections.Counter()
     
     resp += '<table class="table table-hover table-condensed table-bordered table-striped" style="background: white;"><tbody>'
-
+    
+    print(len(res))
     for x in res['results']:
         user_id = x['from_user_id_str'].__str__()
         if x['from_user'] in skip_those:
@@ -199,7 +200,6 @@ def main_route():
     
         cnt[user_id] += 1
         shlv[user_id]['count'] = 0
-
 
     for user in cnt.most_common(10):
         user_id = str.format("{0}",user[0])
