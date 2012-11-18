@@ -191,7 +191,7 @@ skip_those = ['GreenGameSW']
 @app.route('/')
 def main_route():
     twitter_search = twitter.Twitter(domain="search.twitter.com")
-    res=twitter_search.search(q="#greengame", rpp=100)
+    res=twitter_search.search(q="#greengame", rpp=100, since_id='269821849611927552')
     resp = new_hdr
     shlv = dict()
     cnt = collections.Counter()
