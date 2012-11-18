@@ -178,7 +178,7 @@ new_foot = '''
             <div class="span2"></div>
             <div class="span4">
                 <em style="color:white; font-size:22px;">Recent tweets</em></br></br>
-                <a class="twitter-timeline" href="https://twitter.com/search?q=%23greengame" data-widget-id="269808655258492930">Tweets about "#greengame"</a>
+                <a height="575" class="twitter-timeline" href="https://twitter.com/search?q=%23greengame" data-widget-id="269808655258492930">Tweets about "#greengame"</a>
             </div>
     </div>
     </div>
