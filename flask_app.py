@@ -128,10 +128,12 @@ new_hdr = '''
             </script>
         </div>
         <div class="span3" style="padding-top:20px;">
+        <!--
             <table><tbody><tr>
             <td><a href="static/img/Greengame_Mockup1.jpg" rel="lightbox" title="Green Game"><img src="static/img/Greengame_Mockup1.jpg" width="100%" height="100%"></a></td>
             <td><a href="static/img/Greengame_Mockup2.jpg" rel="lightbox" title="Green Game"><img src="static/img/Greengame_Mockup2.jpg" width="100%" height="100%"></a></td>
             </tr></tbody></table>
+        -->
         </div>
         <div class="span1" style="padding-top:20px;"></div>
         <div class="span4" style="padding-left:20px;">
@@ -149,6 +151,16 @@ new_hdr = '''
             </div>
             <!--End mc_embed_signup-->
         </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span6" style="padding-left: 20px;">
+            <a href="static/img/Greengame_Mockup1.jpg" rel="lightbox" title="Green Game"><img src="static/img/Greengame_Mockup1.jpg" width="100%" height="100%"></a>
+        </div>
+        
+        <div class="span6" style="padding-left: 20px;">
+            <a href="static/img/Greengame_Mockup1.jpg" rel="lightbox" title="Green Game"><img src="static/img/Greengame_Mockup1.jpg" width="100%" height="100%"></a>
+        </div>
+        
     </div>
     <div class="row-fluid">
         <div class="span12" style="padding-left: 20px;">
@@ -185,8 +197,7 @@ def main_route():
     cnt = collections.Counter()
     
     resp += '<table class="table table-hover table-condensed table-bordered table-striped" style="background: white;"><tbody>'
-    
-    print(len(res))
+
     for x in res['results']:
         user_id = x['from_user_id_str'].__str__()
         if x['from_user'] in skip_those:
