@@ -129,8 +129,14 @@ new_hdr = '''
             <!--End mc_embed_signup-->
         </div>
     </div>
+    <div class="row-fluid">
+        <div class="span12" style="padding-left: 20px;">
+        <h3 style="text-align: center; color: white;"">Use <em style="font-weigth: 800">#greengame</em> to share your green actions and get ranked!</h3>
+        </div>
+    </div>
+    
     <div class="row-fluid marketing" style="background: rgb(156, 211, 57); padding-left:20px; padding-top:20px;"">
-            <div class="span4" >
+            <div class="span4">
                 <em style="color:white; font-size:22px;">Top contributors</em></br></br>
 '''
 
@@ -157,7 +163,7 @@ def main_route():
     shlv = dict()
     cnt = collections.Counter()
     
-    resp += '<table class="table table-hover table-condensed table-bordered" style="background: white;"><tbody>'
+    resp += '<table class="table table-hover table-condensed table-bordered table-striped" style="background: white;"><tbody>'
 
     for x in res['results']:
         user_id = x['from_user_id_str'].__str__()
@@ -177,7 +183,7 @@ def main_route():
     for user in cnt.most_common(10):
         user_id = str.format("{0}",user[0])
 
-        resp += u"<tr><td><h4>{0}</h4></td><td><img src='{1}'/></td><td><h5><a href='http://twitter.com/{3}'>{2}</a></h5></td></tr></a>".format( 
+        resp += u"<tr><td><h4>{0}</h4></td><td style='align: right;'><img src='{1}'/></td><td><h5><a href='http://twitter.com/{3}'>{2}</a></h5></td></tr></a>".format( 
                            unicode(user[1]), 
                            unicode(shlv[user_id]['profile_url']),
                            unicode(shlv[user_id]['user_name']),
