@@ -59,6 +59,21 @@ new_hdr = '''
       .marketing p + h4 {
         margin-top: 28px;
       }
+      #lightbox{
+        background-color:#eee;
+        padding: 10px;
+        border-bottom: 2px solid #666;
+        border-right: 2px solid #666;
+      }
+        #lightboxDetails{
+            font-size: 0.8em;
+            padding-top: 0.4em;
+            }    
+        #lightboxCaption{ float: left; }
+        #keyboardMsg{ float: right; }
+        
+        #lightbox img{ border: none; } 
+        #overlay img{ border: none; }
     </style>
     <link href="static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -73,6 +88,7 @@ new_hdr = '''
     </style>
     <script src="https://platform.twitter.com/widgets.js" type="text/javascript"></script>
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <script type="text/javascript" src="static/lightbox.js"></script>
   </head>
   <body style="background: rgb(156, 211, 57); background-image: url(static/img/bg.png); background-repeat: repeat-x;">
       <div id="fb-root"></div>
@@ -111,7 +127,12 @@ new_hdr = '''
               })();
             </script>
         </div>
-        <div class="span3" style="padding-top:20px;"></div>
+        <div class="span3" style="padding-top:20px;">
+            <table><tbody><tr>
+            <td><a href="static/img/Greengame_Mockup1.jpg" rel="lightbox" title="Green Game"><img src="static/img/Greengame_Mockup1.jpg" width="100%" height="100%"></a></td>
+            <td><a href="static/img/Greengame_Mockup2.jpg" rel="lightbox" title="Green Game"><img src="static/img/Greengame_Mockup2.jpg" width="100%" height="100%"></a></td>
+            </tr></tbody></table>
+        </div>
         <div class="span1" style="padding-top:20px;"></div>
         <div class="span4" style="padding-left:20px;">
             <!-- Begin MailChimp Signup Form -->
@@ -131,7 +152,7 @@ new_hdr = '''
     </div>
     <div class="row-fluid">
         <div class="span12" style="padding-left: 20px;">
-        <h3 style="text-align: center; color: white;"">Use <em style="font-weigth: 800">#greengame</em> to share your green actions and get ranked!</h3>
+        <h3 style="text-align: center; color: white;"">Use <em>#greengame</em> to share your green actions and get ranked!</h3>
         </div>
     </div>
     
