@@ -154,11 +154,11 @@ new_hdr = '''
     </div>
     <div class="row-fluid">
         <div class="span6" style="padding-left: 20px;">
-            <a href="static/img/Greengame_Mockup1.png" rel="lightbox" title="Green Game"><img src="static/img/Greengame_Mockup1.png" width="100%" height="100%"></a>
+            <a href="static/img/Greengame_Mockup1.png" rel="lightbox" title="Green Game"><img src="static/img/Greengame_Mockup1_800.png" width="100%" height="100%"></a>
         </div>
         
         <div class="span6" style="padding-left: 20px;">
-            <a href="static/img/Greengame_Mockup2.png" rel="lightbox" title="Green Game"><img src="static/img/Greengame_Mockup2.png" width="100%" height="100%"></a>
+            <a href="static/img/Greengame_Mockup2.png" rel="lightbox" title="Green Game"><img src="static/img/Greengame_Mockup2_800.png" width="100%" height="100%"></a>
         </div>
         
     </div>
