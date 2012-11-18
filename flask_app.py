@@ -21,14 +21,12 @@ new_hdr = '''
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    
     <!-- Le styles -->
     <link href="static/bootstrap/css/bootstrap.css" rel="stylesheet">
     <style type="text/css">
       body {
-        
         padding-bottom: 40px;
-        
       }
 
       /* Custom container */
@@ -77,6 +75,14 @@ new_hdr = '''
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
   </head>
   <body style="background: rgb(156, 211, 57); background-image: url(static/img/bg.png); background-repeat: repeat-x;">
+      <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
     <div class="container">
     <div class="masthead" >
         <img src="static/img/header.png">
@@ -89,43 +95,50 @@ new_hdr = '''
         </div>
     </div>
     
-    <div class="row-fluid">
-    
-    <div class="span8" style="padding-left:20px;">
-    </div>
-        <div class="span4" style="padding-left:20px;">
-            <br>
-           
-            <!-- Begin MailChimp Signup Form -->
-<link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
-<style type="text/css">
-     clear:left; font:14px Helvetica,Arial,sans-serif; }
-    /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
-       We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-</style>
-<div id="mc_embed_signup">
-<form action="http://twitter.us6.list-manage.com/subscribe/post?u=c02b248faab3da7a19119c7bd&amp;id=28f614ae67" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-    <label for="mce-EMAIL">Subscribe to our mailing list</label>
-    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-</form>
-</div>
-
-<!--End mc_embed_signup-->
+    <div class="row-fluid" style="padding-left:20px; padding-top:20px;">
+        <div class="span1" style="padding-left:20px; padding-top:20px;">
+            <div style="max-width: 47px; overflow:hidden;">
+                <div class="fb-like" data-href="http://greengame.co" data-send="false" data-layout="button_count" data-width="47" data-show-faces="false"></div>
+            </div>
         </div>
-        
-
-    <div class="row-fluid marketing" style="background: rgb(156, 211, 57);">
-            <div class="span1"></div>
+        <div class="span1" style="padding-top:20px; margin-left:5px;">
+            <div class="g-plusone" data-size="medium" data-annotation="none"></div>
+            <script type="text/javascript">
+              (function() {
+                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                po.src = 'https://apis.google.com/js/plusone.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+              })();
+            </script>
+        </div>
+        <div class="span3" style="padding-top:20px;"></div>
+        <div class="span1" style="padding-top:20px;"></div>
+        <div class="span4">
+            <!-- Begin MailChimp Signup Form -->
+            <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+            <style type="text/css">
+             clear:left; font:14px Helvetica,Arial,sans-serif; }
+            </style>
+            <div id="mc_embed_signup">
+            <form action="http://twitter.us6.list-manage.com/subscribe/post?u=c02b248faab3da7a19119c7bd&amp;id=28f614ae67" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <label for="mce-EMAIL" style="color:white; font-size:18px;">Subscribe to our mailing list</label>
+                <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+                <div class="clear" ><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" style="color:white; font-size:18px;"></div>
+            </form>
+            </div>
+            <!--End mc_embed_signup-->
+        </div>
+    </div>
+    <div class="row-fluid marketing" style="background: rgb(156, 211, 57); padding-left:20px; padding-top:20px;"">
             <div class="span4" >
-                <h4>Top contributors</h4></br>
+                <em style="color:white; font-size:22px;">Top contributors</em></br>
 '''
 
 new_foot = '''
             </div>
-            <div class="span2"></div>
+            <div class="span1"></div>
             <div class="span4">
-                <h4>Recent tweets<h4></br>
+                <em style="color:white; font-size:22px;">Recent tweets</em></br>
                 <a class="twitter-timeline" href="https://twitter.com/search?q=%23greengame" data-widget-id="269808655258492930">Tweets about "#greengame"</a>
             </div>
     </div>
