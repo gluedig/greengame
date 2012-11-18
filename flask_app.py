@@ -215,7 +215,7 @@ def main_route():
     for user in cnt.most_common(10):
         user_id = str.format("{0}",user[0])
 
-        resp += u"<tr><!--<td><h4>{0}</h4></td>--><td style='align: right;'><img src='{1}'/></td><td><h5><a href='http://twitter.com/{3}' target='_blank'>{2}</a></h5></td></tr></a>".format( 
+        resp += u"<tr><td><h4>{0}</h4></td><td><img src='{1}'/></td><td><h5><a href='http://twitter.com/{3}' target='_blank'>{2}</a></h5></td></tr></a>".format( 
                            unicode(user[1]), 
                            unicode(shlv[user_id]['profile_url']),
                            unicode(shlv[user_id]['user_name']),
