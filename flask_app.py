@@ -91,7 +91,7 @@ new_hdr = '''
     <script type="text/javascript" src="static/lightbox.js"></script>
   </head>
   <body style="background: rgb(156, 211, 57); background-image: url(static/img/bg.png); background-repeat: repeat-x;">
-      <div id="fb-root"></div>
+    <div id="fb-root"></div>
         <script>(function(d, s, id) {
           var js, fjs = d.getElementsByTagName(s)[0];
           if (d.getElementById(id)) return;
@@ -182,6 +182,17 @@ new_foot = '''
             </div>
     </div>
     </div>
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36061367-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+    </script>
   </body>
 </html>
 '''
