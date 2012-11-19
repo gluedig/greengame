@@ -163,6 +163,12 @@ new_hdr = '''
         
     </div>
     <div class="row-fluid">
+        <div class="span3"></div>
+        <div class="span9">
+         <iframe width="560" height="315" src="http://www.youtube.com/embed/gKhjTmqy32A" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="row-fluid">
         <div class="span12" style="padding-left: 20px;">
         <h3 style="text-align: center; color: white;"">Use <em>#greengame</em> to share your green actions and get ranked!</h3>
         </div>
@@ -235,7 +241,6 @@ def main_route():
     
     
     return resp+'</tbody></table>'+new_foot
-
 
 if __name__ == '__main__':
     app.debug = True
