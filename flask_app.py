@@ -127,15 +127,11 @@ new_hdr = '''
               })();
             </script>
         </div>
-        <div class="span3" style="padding-top:20px;">
-        <!--
-            <table><tbody><tr>
-            <td><a href="static/img/Greengame_Mockup1.jpg" rel="lightbox" title="Green Game"><img src="static/img/Greengame_Mockup1.jpg" width="100%" height="100%"></a></td>
-            <td><a href="static/img/Greengame_Mockup2.jpg" rel="lightbox" title="Green Game"><img src="static/img/Greengame_Mockup2.jpg" width="100%" height="100%"></a></td>
-            </tr></tbody></table>
-        -->
+        <div class="span4" style="padding-top:0px; margin-left: 0px;">
+            <a href="http://goo.gl/bkWgZ" target="_blank" style="text-decoration: none;"><div style="align: center; text-align: center; color: white; font-size: 350%;"><img src="static/img/GSB2012.png" height="25%" width="25%" style="margin-right: 15px;">Vote for us!</div></a>
         </div>
-        <div class="span1" style="padding-top:20px;"></div>
+        
+        
         <div class="span4" style="padding-left:20px;">
             <!-- Begin MailChimp Signup Form -->
             <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
@@ -170,7 +166,7 @@ new_hdr = '''
     </div>
     <div class="row-fluid">
         <div class="span12" style="padding-left: 20px;">
-        <h3 style="text-align: center; color: white;"">Use <em>#greengame</em> to share your green actions and get ranked!</h3>
+        <h3 style="text-align: center; color: white;">Use <em>#greengame</em> to share your green actions and get ranked!</h3>
         </div>
     </div>
     
